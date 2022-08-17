@@ -1,52 +1,29 @@
-<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<url>
-<loc>https://mnmn092631.github.io/portfolio/</loc>
-<lastmod>2022-08-17T22:02:31+09:00</lastmod>
-</url>
-<url>
-<loc>https://mnmn092631.github.io/study/</loc>
-<lastmod>2022-08-17T22:02:31+09:00</lastmod>
-</url>
-<url>
-<loc>https://mnmn092631.github.io/tag-css/</loc>
-<lastmod>2022-08-17T22:02:31+09:00</lastmod>
-</url>
-<url>
-<loc>https://mnmn092631.github.io/tag-html/</loc>
-<lastmod>2022-08-17T22:02:31+09:00</lastmod>
-</url>
-<url>
-<loc>https://mnmn092631.github.io/tag-js/</loc>
-<lastmod>2022-08-17T22:02:31+09:00</lastmod>
-</url>
-<url>
-<loc>https://mnmn092631.github.io/</loc>
-</url>
-<url>
-<loc>https://mnmn092631.github.io/posts.html</loc>
-</url>
-<url>
-<loc>https://mnmn092631.github.io/search/</loc>
-</url>
-<url>
-<loc>https://mnmn092631.github.io/tags/</loc>
-</url>
-<url>
-<loc>https://mnmn092631.github.io/licenses/Apache-2.0.html</loc>
-</url>
-<url>
-<loc>https://mnmn092631.github.io/licenses/GPL-3.0.html</loc>
-</url>
-<url>
-<loc>https://mnmn092631.github.io/licenses/MIT.html</loc>
-</url>
-<url>
-<loc>https://mnmn092631.github.io/licenses/PRO.html</loc>
-</url>
-<url>
-<loc>https://mnmn092631.github.io/licenses/W3C-20150513.html</loc>
-</url>
-<url>
-<loc>https://mnmn092631.github.io/licenses/</loc>
-</url>
+---
+layout: null
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  {% for post in site.posts %}
+    <url>
+      <loc>{{ site.url }}{{ post.url }}</loc>
+      {% if post.lastmod == null %}
+        <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
+      {% else %}
+        <lastmod>{{ post.lastmod | date_to_xmlschema }}</lastmod>
+      {% endif %}
+
+      {% if post.sitemap.changefreq == null %}
+        <changefreq>weekly</changefreq>
+      {% else %}
+        <changefreq>{{ post.sitemap.changefreq }}</changefreq>
+      {% endif %}
+
+      {% if post.sitemap.priority == null %}
+          <priority>1.0</priority>
+      {% else %}
+        <priority>{{ post.sitemap.priority }}</priority>
+      {% endif %}
+
+    </url>
+  {% endfor %}
 </urlset>
