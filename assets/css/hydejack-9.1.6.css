@@ -1,0 +1,36 @@
+---
+---
+{% capture include_to_scssify %}{% include styles/style.scss %}{% endcapture %}{% include header.txt %}{{ include_to_scssify | scssify }}
+
+.page-control {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+	padding: 20px;
+}
+
+.page-control > div {
+  max-width: 45%;
+}
+
+.button {
+	display:inline-block;
+	text-align: center;
+	cursor:pointer;
+	font-size:18px;
+	font-weight:bold;
+	text-decoration:none;
+	border-bottom: #5396ea 2px solid;
+	transition: border-bottom 250ms ease-in;
+	padding: 3px 15px;
+}
+
+.button:hover {
+	border-bottom: #426da1 2px solid;
+}
+
+
+/* input box color */
+input:-webkit-autofill { -webkit-box-shadow: 0 0 0 30px #fff inset !important; -webkit-text-fill-color: #000 !important; }
+input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active { transition: background-color 5000s ease-in-out 0s !important; }
