@@ -1,0 +1,13 @@
+@supports (text-decoration-thickness: initial) and (text-underline-offset: initial) {
+  .dl-table a {
+    text-underline-offset: 0.8rem;
+  }
+}
+@supports not ((text-decoration-thickness: initial) and (text-underline-offset: initial)) {
+  .dl-table a {
+    padding-bottom: 0.45rem;
+  }
+}
+.dl-table .btn, .dl-table .gumroad-button {
+  margin: 1rem 0;
+}/*# sourceMappingURL=my-style.css.map */

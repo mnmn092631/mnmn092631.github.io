@@ -1,0 +1,77 @@
+.__NAMESPACE_PREFIX__-box[data-animation=fade][data-state=hidden] {
+  opacity: 0;
+}
+
+[data-__NAMESPACE_PREFIX__-root] {
+  max-width: calc(100vw - 10px);
+}
+
+.__NAMESPACE_PREFIX__-box {
+  position: relative;
+  background-color: #333;
+  color: white;
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 1.4;
+  outline: 0;
+  transition-property: transform, visibility, opacity;
+}
+.__NAMESPACE_PREFIX__-box[data-placement^=top] > .__NAMESPACE_PREFIX__-arrow {
+  bottom: 0;
+}
+.__NAMESPACE_PREFIX__-box[data-placement^=top] > .__NAMESPACE_PREFIX__-arrow::before {
+  bottom: -7px;
+  left: 0;
+  border-width: 8px 8px 0;
+  border-top-color: initial;
+  transform-origin: center top;
+}
+.__NAMESPACE_PREFIX__-box[data-placement^=bottom] > .__NAMESPACE_PREFIX__-arrow {
+  top: 0;
+}
+.__NAMESPACE_PREFIX__-box[data-placement^=bottom] > .__NAMESPACE_PREFIX__-arrow::before {
+  top: -7px;
+  left: 0;
+  border-width: 0 8px 8px;
+  border-bottom-color: initial;
+  transform-origin: center bottom;
+}
+.__NAMESPACE_PREFIX__-box[data-placement^=left] > .__NAMESPACE_PREFIX__-arrow {
+  right: 0;
+}
+.__NAMESPACE_PREFIX__-box[data-placement^=left] > .__NAMESPACE_PREFIX__-arrow::before {
+  border-width: 8px 0 8px 8px;
+  border-left-color: initial;
+  right: -7px;
+  transform-origin: center left;
+}
+.__NAMESPACE_PREFIX__-box[data-placement^=right] > .__NAMESPACE_PREFIX__-arrow {
+  left: 0;
+}
+.__NAMESPACE_PREFIX__-box[data-placement^=right] > .__NAMESPACE_PREFIX__-arrow::before {
+  left: -7px;
+  border-width: 8px 8px 8px 0;
+  border-right-color: initial;
+  transform-origin: center right;
+}
+.__NAMESPACE_PREFIX__-box[data-inertia][data-state=visible] {
+  transition-timing-function: cubic-bezier(0.54, 1.5, 0.38, 1.11);
+}
+
+.__NAMESPACE_PREFIX__-arrow {
+  width: 16px;
+  height: 16px;
+  color: #333;
+}
+.__NAMESPACE_PREFIX__-arrow::before {
+  content: "";
+  position: absolute;
+  border-color: transparent;
+  border-style: solid;
+}
+
+.__NAMESPACE_PREFIX__-content {
+  position: relative;
+  padding: 5px 9px;
+  z-index: 1;
+}/*# sourceMappingURL=index.css.map */
